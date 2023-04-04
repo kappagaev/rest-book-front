@@ -1,10 +1,14 @@
-import { Button } from "react-bootstrap"
 import "bootstrap/dist/css/bootstrap.min.css"
+import { Link, Outlet } from "react-router-dom"
 
 function App() {
   return (
     <div className="App">
-      Hello, world!<Button>Click me!</Button>
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/about">User</Link>
+      </nav>
+      <Outlet />
     </div>
   )
 }
