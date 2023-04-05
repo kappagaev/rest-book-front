@@ -1,4 +1,5 @@
 import axios from "axios"
+import { Book } from "../pages/Books"
 
 const baseURL = "http://localhost/api"
 
@@ -28,4 +29,13 @@ export interface CreateUserDto {
 
 export const apiCreateUser = (user: CreateUserDto) => {
   return api.post("/users", user)
+}
+
+export interface CreateBookDto {
+  title: string
+  description: string
+}
+export const apiCreateBook = async (book: CreateBookDto) => {
+  const res = await api.post<Book>("/books", book)
+  return res
 }
