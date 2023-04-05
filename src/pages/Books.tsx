@@ -8,6 +8,7 @@ export interface Book {
   id: number
   title: string
   description: string
+  userId?: number
 }
 
 export const Books = () => {

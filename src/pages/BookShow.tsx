@@ -1,5 +1,6 @@
 import { Link, useNavigate, useParams } from "react-router-dom"
 import { apiDeleteBook } from "../axios/api"
+import { useAuth } from "../context/AuthContextProvider"
 import { useNotification } from "../context/NotificationContextProvider"
 import { useFetch } from "../hooks/useFetch"
 import { Book } from "./Books"
@@ -9,6 +10,8 @@ export const BookShow = () => {
   const { data } = useFetch<Book>({
     url: `/books/${id}`,
   })
+
+  const { payload } = useAuth()
 
   const { showNotification } = useNotification()
   const navigate = useNavigate()
@@ -38,13 +41,17 @@ export const BookShow = () => {
       <h2>{data?.title}</h2>
       <p>{data?.description}</p>
 
+      {payload?.user_id === data?.userId ? (
+        <>
+          <Link className="btn btn-success" to={`/books/${id}/edit`}>
+            Edit
+          </Link>
+          <button type="submit" className="btn btn-danger" onClick={onDelete}>
+            Delete
+          </button>
+        </>
+      ) : null}
       <br />
-      <Link className="btn btn-success" to={`/books/${id}/edit`}>
-        Edit
-      </Link>
-      <button type="submit" className="btn btn-danger" onClick={onDelete}>
-        Delete
-      </button>
     </div>
   )
 }
