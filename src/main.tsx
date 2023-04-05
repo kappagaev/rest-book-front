@@ -9,6 +9,7 @@ import { BookEdit } from "./pages/BookEdit"
 import { Books } from "./pages/Books"
 import { BookShow } from "./pages/BookShow"
 import { Home } from "./pages/Home"
+import { Signin } from "./pages/Signin"
 import { Signup } from "./pages/Signup"
 
 const router = createBrowserRouter([
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
       {
         path: "/signup",
         element: <Signup />,
+      },
+      {
+        path: "/signin",
+        element: <Signin />,
       },
     ],
   },

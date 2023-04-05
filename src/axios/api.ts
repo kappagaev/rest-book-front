@@ -31,6 +31,14 @@ export const apiCreateUser = (user: CreateUserDto) => {
   return api.post("/users", user)
 }
 
+export interface SigninDto {
+  email: string
+  password: string
+}
+export const apiSignin = (user: SigninDto) => {
+  return api.post("/auth/signin", user)
+}
+
 export interface CreateBookDto {
   title: string
   description: string

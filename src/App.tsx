@@ -10,6 +10,7 @@ function App() {
         <Link to="/about">User</Link>
         <Link to="/books">Books</Link>
         <Link to="/signup">Signup</Link>
+        <Link to="/signin">Signin</Link>
       </nav>
       <NotificationBar />
       <Outlet />
