@@ -4,7 +4,10 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import App from "./App"
 import { NotificationContextProvider } from "./context/NotificationContextProvider"
 import { About } from "./pages/About"
+import { BookCreate } from "./pages/BookCreate"
+import { BookEdit } from "./pages/BookEdit"
 import { Books } from "./pages/Books"
+import { BookShow } from "./pages/BookShow"
 import { Home } from "./pages/Home"
 import { Signup } from "./pages/Signup"
 
@@ -24,6 +27,18 @@ const router = createBrowserRouter([
       {
         path: "/books",
         element: <Books />,
+      },
+      {
+        path: "/books/:id",
+        element: <BookShow />,
+      },
+      {
+        path: "/books/:id/edit",
+        element: <BookEdit />,
+      },
+      {
+        path: "/books/create",
+        element: <BookCreate />,
       },
       {
         path: "/signup",

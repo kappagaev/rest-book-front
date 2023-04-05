@@ -16,6 +16,10 @@ export const apiGetBooks = () => {
   return api.get("/books")
 }
 
+export const apiDeleteBook = (id: number) => {
+  return api.delete(`/books/${id}`)
+}
+
 export interface CreateUserDto {
   name: string
   email: string
