@@ -1,17 +1,12 @@
 import "bootstrap/dist/css/bootstrap.min.css"
-import { Link, Outlet } from "react-router-dom"
+import { Outlet } from "react-router-dom"
+import { NavBar } from "./components/Navbar"
 import { NotificationBar } from "./components/UI/NotificationBar"
 
 function App() {
   return (
     <div className="App">
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/about">User</Link>
-        <Link to="/books">Books</Link>
-        <Link to="/signup">Signup</Link>
-        <Link to="/signin">Signin</Link>
-      </nav>
+      <NavBar />
       <NotificationBar />
       <Outlet />
     </div>
