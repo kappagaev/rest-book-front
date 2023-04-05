@@ -17,11 +17,13 @@ export const Signin = () => {
     const res = await apiSignin(data)
 
     if (res.status === 200) {
+      const accessToken = res.data["access_token"]
       showNotification({
         title: "Success!",
         message: "User created successfully!",
         status: "success",
       })
+      localStorage.setItem("accessToken", accessToken)
       navigate("/")
     } else {
       showNotification({

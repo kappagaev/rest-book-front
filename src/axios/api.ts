@@ -11,6 +11,13 @@ const api = axios.create({
   },
 })
 
+api.interceptors.request.use(function (config) {
+  // Do something before request is sent
+  let token = localStorage.getItem("accessToken")
+  config.headers["Authorization"] = "Bearer " + token
+  return config
+})
+
 export default api
 
 export const apiGetBooks = () => {
