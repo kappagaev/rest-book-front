@@ -6,11 +6,6 @@ const AuthLinks = () => {
   return (
     <>
       <li className="nav-item">
-        <NavLink end className="nav-link" to="/books">
-          Books
-        </NavLink>
-      </li>
-      <li className="nav-item">
         <NavLink end className="nav-link" to="/books/create">
           New Book
         </NavLink>
@@ -50,6 +45,11 @@ export const NavBar = () => {
           <li className="nav-item active">
             <NavLink end className="nav-link" to="/">
               Home
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink end className="nav-link" to="/books">
+              Books
             </NavLink>
           </li>
           {payload?.user_id ? <AuthLinks /> : <GuestLinks />}
