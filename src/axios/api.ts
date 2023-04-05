@@ -39,3 +39,11 @@ export const apiCreateBook = async (book: CreateBookDto) => {
   const res = await api.post<Book>("/books", book)
   return res
 }
+
+export interface UpdateBookDto {
+  title: string
+  description: string
+}
+export const apiUpdateBook = (id: number, book: UpdateBookDto) => {
+  return api.put(`/books/${id}`, book)
+}
