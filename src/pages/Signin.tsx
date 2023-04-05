@@ -36,18 +36,32 @@ export const Signin = () => {
 
   return (
     <div>
-      <h1>Signup</h1>
+      <h1>Signin</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div>
-          <label htmlFor="email">Email</label>
-          <input type="text" {...register("email", { required: true })} />
-          {errors.email && <span>This field is required</span>}
+        <div className="row">
+          <div className="col">
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              className="form-control"
+              {...register("email", { required: true })}
+            />
+            {errors.email && <span>This field is required</span>}
 
-          <label htmlFor="password">Password</label>
-          <input type="text" {...register("password", { required: true })} />
-          {errors.password && <span>This field is required</span>}
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              className="form-control"
+              {...register("password", { required: true })}
+            />
+            {errors.password && <span>This field is required</span>}
+          </div>
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit" className="btn btn-primary">
+          Submit
+        </button>
       </form>
     </div>
   )

@@ -39,20 +39,38 @@ export const Signup = () => {
     <div>
       <h1>Signup</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div>
-          <label htmlFor="name">Name</label>
-          <input type="text" {...register("name", { required: true })} />
-          {errors.name && <span>This field is required</span>}
+        <div className="row mb-10">
+          <div className="col">
+            <label htmlFor="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              className="form-control"
+              {...register("name", { required: true })}
+            />
+            {errors.name && <span>This field is required</span>}
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              className="form-control"
+              {...register("email", { required: true })}
+            />
+            {errors.email && <span>This field is required</span>}
 
-          <label htmlFor="email">Email</label>
-          <input type="text" {...register("email", { required: true })} />
-          {errors.email && <span>This field is required</span>}
-
-          <label htmlFor="password">Password</label>
-          <input type="text" {...register("password", { required: true })} />
-          {errors.password && <span>This field is required</span>}
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              className="form-control"
+              {...register("password", { required: true })}
+            />
+            {errors.password && <span>This field is required</span>}
+          </div>
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit" className="btn btn-primary">
+          Submit
+        </button>
       </form>
     </div>
   )
